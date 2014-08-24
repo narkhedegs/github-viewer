@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="githubViewer">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Github Viewer</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<style type="text/css">
+		body {
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+
+		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+			display: none !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Github Viewer</a>
+			</div>
+			<div class="collapse navbar-collapse"></div>
+		</div>
+	</div>
+	<div class="container" ng-controller="UsersController">
+		<div class="row">
+			<div class="col-sm-12">
+				<form role="form" ng-submit="getUser(username)">
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Type github user name..." ng-model="username" />
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="submit">Get User</button>
+							</span>							
+						</div>
+					</div>
+				</form>				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="alert alert-danger" role="alert" ng-show="error" ng-cloak>
+					{{error}}
+				</div>
+			</div>
+		</div>
+		<div class="row" ng-include="'user-detail.html'" ng-show="user" ng-cloak>
+		</div>
+	</div>
+
+	<script src="bower_components/angularjs/angular.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="users-controller.js"></script>
+</body>
+</html>
