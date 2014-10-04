@@ -26,7 +26,24 @@
 					</div>
 				</div>
 				<div class="col-sm-8">
-					
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Repository Name</th>
+								<th>Stars</th>
+								<th>Language</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="repository in repositories">
+								<td>{{ $index + 1 }}</td>
+								<td>{{ repository.name }}</td>
+								<td>{{ repository.stargazers_count }}</td>
+								<td>{{ repository.language }}</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
