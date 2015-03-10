@@ -90,14 +90,6 @@ describe("users controller", function(){
 				expect($scope.error).toBeFalsy();
 			});
 
-			it("username should be emptied", function(){
-				var username = "narkhedegs";
-				$scope.username = username;
-				$scope.getUser(username);
-				$scope.$apply();
-				expect($scope.username).toBeFalsy();
-			});
-
 			it("should call getRepositoriesForUser method of github service", function(){
 				$scope.getUser("narkhedegs");
 				$scope.$apply();
@@ -170,14 +162,6 @@ describe("users controller", function(){
 				$scope.getUser("non existent user");
 				$scope.$apply();
 				expect($scope.error).toBeTruthy();
-			});
-
-			it("username should not be emptied", function(){
-				var username = "non existent user";
-				$scope.username = username;
-				$scope.getUser(username);
-				$scope.$apply();
-				expect($scope.username).toBe(username);
 			});
 
 		});

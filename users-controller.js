@@ -11,7 +11,6 @@
 
 		var onGetUserSuccess = function(data){
 			$scope.user = data;
-			$scope.username = null;
 			$scope.error = null;
 
 			github.getRepositoriesForUser(data.login)

@@ -43,6 +43,7 @@ describe("github service", function(){
 			$httpBackend.expectGET("https://api.github.com/users/narkhedegs");
 			github.getUser("narkhedegs");
 			$httpBackend.flush();
+			expect(true).toBeTruthy();
 		});
 
 		describe("if successful", function(){
@@ -73,6 +74,7 @@ describe("github service", function(){
 			$httpBackend.expectGET("https://api.github.com/users/narkhedegs/repos");
 			github.getRepositoriesForUser("narkhedegs");
 			$httpBackend.flush();
+			expect(true).toBeTruthy();
 		});
 
 		describe("if successful", function(){
