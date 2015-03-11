@@ -36,40 +36,19 @@
 				</button>
 				<a class="navbar-brand" href="#">Github Viewer</a>
 			</div>
-			<div class="collapse navbar-collapse"></div>
+			<div class="collapse navbar-collapse" ng-include="'navigation.html'">
+			</div>
 		</div>
 	</div>
-	<div class="container" ng-controller="UsersController">
-		<div class="row">
-			<div class="col-sm-12">
-				<form role="form" id="getUserForm" name="getUserForm" ng-submit="getUserForm.$invalid ? return : getUser(username)" novalidate>
-					<div class="form-group" ng-class="{ 'has-error': getUserForm.username.$invalid && getUserForm.$submitted }">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Type github user name..." ng-model="username" name="username" required />
-							<span class="input-group-btn">
-								<button class="btn btn-primary" type="submit">Get User</button>
-							</span>							
-						</div>
-						<p class="help-block">Please enter github username.</p>
-					</div>
-				</form>				
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="alert alert-danger" role="alert" ng-show="error" ng-cloak>
-					{{error}}
-				</div>
-			</div>
-		</div>
-		<div class="row" ng-include="'user-detail.html'" ng-show="user" ng-cloak>
-		</div>
+	<div class="container" ng-view>
 	</div>
 
 	<script type="text/javascript" src="bower_components/angularjs/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="application.js"></script>
+	<script type="text/javascript" src="navigation-controller.js"></script>
 	<script type="text/javascript" src="users-controller.js"></script>
 	<script type="text/javascript" src="github-service.js"></script>
 </body>

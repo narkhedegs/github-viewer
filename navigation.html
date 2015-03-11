@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav" ng-controller="NavigationController">
+	<li ng-class="shouldActivateMenuItem('home') ? 'active' : ''">
+		<a href="#/home">Home</a>
+	</li>					
+	<li ng-class="shouldActivateMenuItem('specifications') ? 'active' : ''">
+		<a href="#/specifications">Specifications</a>
+	</li>					
+	<li ng-class="shouldActivateMenuItem('about') ? 'active' : ''">
+		<a href="#/about">About</a>
+	</li>					
+	<li ng-class="shouldActivateMenuItem('contact') ? 'active' : ''">
+		<a href="#/contact">Contact</a>
+	</li>
+</ul>
