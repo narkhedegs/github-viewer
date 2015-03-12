@@ -7,6 +7,9 @@
 				templateUrl: "get-user.html",
 				controller: "UsersController"
 			})
+			.when("/specifications", {
+				templateUrl: "specifications.html"
+			})
 			.when("/about", {
 				templateUrl: "about.html"
 			})
