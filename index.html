@@ -6,6 +6,30 @@
 	<title>Github Viewer</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<style type="text/css">
+		/* Sticky footer styles
+		-------------------------------------------------- */
+		html {
+			position: relative;
+			min-height: 100%;
+		}
+
+		.footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			/* Set the fixed height of the footer here */
+			height: 60px;
+			background-color: #f5f5f5;
+		}
+
+		/* Custom page CSS
+		-------------------------------------------------- */
+		/* Not required for template or sticky footer method. */
+
+		.container .text-muted {
+			margin: 20px 0;
+		}	
+
 		body {
 			padding-top: 70px;
 			padding-bottom: 70px;
@@ -21,7 +45,7 @@
 
 		.form-group.has-error .help-block {
 			display: block;
-		}
+		}	
 	</style>
 </head>
 <body>
@@ -42,6 +66,11 @@
 	</div>
 	<div class="container" ng-view>
 	</div>
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">© <a href="mailto:narkhedegs@gmail.com">Gaurav Narkhede</a> 2015</p>
+		</div>
+	</footer>
 
 	<script type="text/javascript" src="bower_components/angularjs/angular.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
